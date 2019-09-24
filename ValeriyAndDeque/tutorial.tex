@@ -1,0 +1,9 @@
+\begin{tutorial}{Valeriy and Deque}
+
+It can be noted that if the deque has the largest element of the deque in the first position, then during the next operations it will remain in the first position, and the second one will be written to the end each time, that is, all the elements of the deque starting from the second will move cyclically left.
+
+Let's go over the deque and find the largest element by value. We will perform the operation described in the statements until the maximum position is in the first position and save the elements in the first and second positions by the operation number. In order to pre-calculate all pairs until the moment when the maximum position is found, it is enough to make no more than one pass through the deque, since in the worst case, the maximum element can be located at the end of the deque.
+
+Denote as $maxIndex$ the position of the maximum element. Then if $m_j <maxIndex$, simply return a pair of numbers from the pre-calculated array, otherwise $A$ is equal to the maximum element, and $B$ is equal to the deque element with the index $(m_j - (maxIndex + 1)) \% (n - 1) + 1$ in $0$-indexing (since we performed the operations until the moment when the maximum position is in the first position, this maximum element is now recorded in the first position).
+
+\end{tutorial}
